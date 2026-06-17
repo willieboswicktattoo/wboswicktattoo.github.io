@@ -45,7 +45,7 @@ body {
   color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; display: block;
 }
 .hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.5rem, 6vw, 5.5rem);
   font-weight: 900; text-transform: uppercase;
   letter-spacing: 0.03em; line-height: 0.95;
@@ -100,7 +100,7 @@ body {
   color: var(--smoke); margin-bottom: 1.2rem;
 }
 .about-text h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700; line-height: 1.1;
   color: #fff; margin-bottom: 1.5rem;
@@ -122,9 +122,9 @@ body {
 .gallery-section { padding: 5rem 3rem; background: var(--black); }
 .gallery-header { margin-bottom: 2.5rem; }
 .gallery-header h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;
+letter-spacing: 0.05em;
 }
 .gallery-tabs {
   display: flex; gap: 0; margin-bottom: 2rem;
@@ -160,9 +160,9 @@ body {
 /* BOOKING */
 .booking { padding: 6rem 3rem; background: var(--dark); text-align: center; }
 .booking h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;
+letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
 .booking p {
@@ -185,7 +185,7 @@ footer {
   padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center;
 }
 .footer-logo {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
 }
 .footer-copy { font-size: 0.68rem; color: #444; }
