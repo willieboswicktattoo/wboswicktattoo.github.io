@@ -59,7 +59,7 @@ async function loadShop() {
   const grid = document.querySelector('.shop-grid');
 
   grid.innerHTML = items.map(item => `
-    <div class="shop-card" onclick="openModal('images/shop/${item.image}', '${item.name}', ${item.price})">
+    <div class="shop-card" onclick="openModal('images/shop/${item.image}', '${item.name}', ${parseFloat(String(item.price).replace('$',''))})">
       <div class="shop-img"><img src="images/shop/${item.image}" alt="${item.name}"/></div>
       <div class="shop-info">
         <span class="shop-name">${item.name}</span>
