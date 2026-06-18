@@ -278,6 +278,18 @@ footer {
 a { color: var(--white); text-decoration: underline; }
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .page-nav {
+  padding: 1rem 1.2rem;
+}
+.nav-logo {
+  font-size: 1rem;
+}
+.nav-links {
+  gap: 1.2rem;
+}
+.nav-links a {
+  font-size: 0.6rem;
+}
  .hero-content { padding: 0 1.5rem; padding-top:10rem }
   .strip { grid-template-columns: repeat(2, 1fr); height: 260px; }
   .about { grid-template-columns: 1fr; }
