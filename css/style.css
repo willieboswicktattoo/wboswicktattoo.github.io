@@ -145,44 +145,77 @@ body {
 .about-cta:hover { background: #fff; color: #000; }
 
 /* GALLERY */
-.gallery-section { padding: 5rem 3rem; background: var(--black); }
 .gallery-header { margin-bottom: 2.5rem; }
 .gallery-header h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
 letter-spacing: 0.05em;
 }
+
+.tab.active, .tab:hover { color: #fff; border-bottom-color: #fff; }
+
+.gallery-section { padding: 4rem 3rem; background: var(--black); }
+ 
+.gallery-header { margin-bottom: 1.5rem; }
+.gallery-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: 0.05em;
+}
+ 
 .gallery-tabs {
-  display: flex; gap: 0; margin-bottom: 2rem;
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--ash);
 }
 .tab {
-  padding: 0.5rem 1.2rem;
-  font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--smoke); cursor: pointer; background: none;
-  border: none; border-bottom: 2px solid transparent;
-  margin-bottom: -1px; transition: color 0.2s, border-color 0.2s;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
 }
 .tab.active, .tab:hover { color: #fff; border-bottom-color: #fff; }
+ 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 3px; max-width: 1100px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  width: 100%;
 }
 .gallery-card {
-  aspect-ratio: 3/4; overflow: hidden; position: relative; cursor: pointer;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
   background: var(--ash);
 }
-.gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-.gallery-card:hover img { transform: scale(1.04); }
-.gallery-card .ph {
-  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 0.5rem; opacity: 0.2;
+.gallery-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+  display: block;
 }
-.gallery-card .ph span {
-  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--smoke);
+.gallery-card:hover img { transform: scale(1.05); }
+ 
+@media (max-width: 768px) {
+  .gallery-section { padding: 3rem 1rem; }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 6px;
+  }
+  .gallery-tabs { flex-direction: row; }
+  .tab { font-size: 0.65rem; padding: 0.4rem 1rem; }
 }
-
 /* BOOKING */
 .booking {
   margin-top: 5rem;
@@ -359,7 +392,11 @@ a { color: var(--white); text-decoration: underline; }
   background: none; border: none; color: #fff;
   font-size: 1rem; cursor: pointer;
 }
-.modal-img { width: 100%; display: block; }
+.modal-img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain; 
+}
 .modal-details { padding: 1.5rem; }
 .modal-details h3 {
   font-family: 'Bebas Neue', sans-serif;
@@ -374,3 +411,41 @@ a { color: var(--white); text-decoration: underline; }
   transition: background 0.25s, color 0.25s;
 }
 .modal-buy:hover { background: var(--ash); color: #fff; }
+/* LIGHTBOX */
+.lightbox-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+}
+.lightbox-close {
+  position: fixed; top: 1.2rem; right: 1.5rem;
+  background: none; border: none; color: #fff;
+  font-size: 1.4rem; cursor: pointer; z-index: 201;
+  opacity: 0.7; transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-arrow {
+  position: fixed;
+  top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: #fff;
+  font-size: 2.5rem; cursor: pointer; z-index: 201;
+  padding: 1rem;
+  opacity: 0.5; transition: opacity 0.2s;
+  line-height: 1;
+}
+.lightbox-arrow:hover { opacity: 1; }
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+.lightbox-counter {
+  position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+  font-size: 0.7rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.4);
+}

@@ -23,12 +23,20 @@
     <h2>Tattoos & Flash</h2>
   </div>
   <div class="gallery-tabs">
-    <button class="tab active" data-filter="all">All</button>
-    <button class="tab" data-filter="tattoos">Tattoos</button>
+    <button class="tab active" data-filter="tattoos">Tattoos</button>
     <button class="tab" data-filter="flash">Flash</button>
   </div>
   <div class="gallery-grid"></div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-arrow lightbox-prev" onclick="lightboxPrev(event)">&#8592;</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()"/>
+  <button class="lightbox-arrow lightbox-next" onclick="lightboxNext(event)">&#8594;</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
 
 <footer>
   <div class="footer-logo">Willie Boswick Tattoos</div>

@@ -8,15 +8,53 @@ async function loadGallery() {
   ];
 
   const grid = document.querySelector('.gallery-grid');
+  let currentImages = [];
+  let currentIndex = 0;
 
   function render(filter) {
-    const filtered = filter === 'all' ? all : all.filter(img => img.category === filter);
-    grid.innerHTML = filtered.map(img => `
-      <div class="gallery-card">
+    currentImages = filter === 'all' ? all : all.filter(img => img.category === filter);
+    grid.innerHTML = currentImages.map((img, i) => `
+      <div class="gallery-card" onclick="openLightbox(${i})">
         <img src="${img.src}" alt="${img.category}" loading="lazy"/>
       </div>
     `).join('');
   }
+
+  window.openLightbox = function(index) {
+    currentIndex = index;
+    showLightbox();
+  };
+
+  function showLightbox() {
+    const img = currentImages[currentIndex];
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').style.display = 'none';
+  };
+
+  window.lightboxPrev = function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    showLightbox();
+  };
+
+  window.lightboxNext = function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    showLightbox();
+  };
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').style.display !== 'flex') return;
+    if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; showLightbox(); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentImages.length; showLightbox(); }
+    if (e.key === 'Escape') closeLightbox();
+  });
 
   render('all');
 
@@ -24,8 +62,7 @@ async function loadGallery() {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const filter = tab.dataset.filter;
-      render(filter);
+      render(tab.dataset.filter);
     });
   });
 }
