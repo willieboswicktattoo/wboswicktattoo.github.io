@@ -300,6 +300,8 @@ a { color: var(--white); text-decoration: underline; }
     .hero-bg img {
     min-height: 80vh;
     object-fit: cover;
+      object-position: 25% center;
+
   }
     .hero-bg::after {
     background: linear-gradient(to bottom, rgba(10,10,10,0) 70%, rgba(10,10,10,0.8) 88%, rgba(10,10,10,1) 98%);
