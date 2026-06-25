@@ -2,27 +2,6 @@
 
 🌐 **Live site: https://willieboswicktattoo.github.io**
 
----
-
-## Site Structure
-
-```
-index.html          — Home page
-tattoos.html        — Tattoos & Flash gallery
-shop.html           — Shop page
-css/style.css       — All styles
-js/main.js          — Home page script
-js/tattoos.js       — Gallery + lightbox script
-images/
-  site/             — Hero photos
-  tattoos/          — Tattoo photos
-  flash/            — Flash designs
-  shop/             — Shop item photos
-  gallery.json      — Auto-updated list of tattoo/flash photos
-shop.json           — Shop items (name, price, image)
-```
-
----
 
 ## Adding Tattoo or Flash Photos
 
@@ -78,6 +57,5 @@ The shop updates immediately — no wait needed.
 
 - File names should have **no spaces** — use dashes (e.g. `rose-print.jpg`)
 - Photos should be **JPG or PNG**
-- Try to keep photos under **2MB** for fast loading
 - Price should be a **number** with no `$` sign (e.g. `30` not `"$30"`)
 - feel free to reach out to me at any time if you have trouble!
