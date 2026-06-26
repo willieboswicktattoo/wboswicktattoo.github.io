@@ -79,7 +79,14 @@ This takes two steps — uploading the photo, then adding the item details.
 Your new item will appear in the shop after a few minutes! <br> <img width="200" alt="image" src="https://github.com/user-attachments/assets/bcd0c14f-68c8-481c-b707-421457efb933" />
  
 ---
+## Adding Business Paypal Account
  
+1. Click **`shop.html`** → click the pencil icon ✏️
+2. Update line 41 to your paypal email
+   ```
+   <input type="hidden" name="business" value="ADD_YOUR_PAYPAL_EMAIL@gmail.com"
+3. Click commit changes
+---
 ## Removing a Shop Item
  
 1. Click **`shop.json`** → click the pencil icon ✏️
